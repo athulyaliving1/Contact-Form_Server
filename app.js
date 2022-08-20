@@ -51,7 +51,9 @@ app.use("/contact", (req, res) => {
     from: `${name}`,
     to: maillist,
     subject: "Chennai Submission",
-    html: `<p>Name: ${name}</p>
+    html: ` 
+   <p> Hello Athulyaliving team,</p>
+    <p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Message: ${textarea}</p>
            <p>number: ${number}</p>`,
