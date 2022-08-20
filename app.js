@@ -18,12 +18,12 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
-app.use(
-  cors({
-    origin: "https://www.athulyahomecare.com/lp/doctor-on-call/enquiryform",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "https://www.athulyahomecare.com/lp/doctor-on-call/enquiryform",
+//     credentials: true,
+//   })
+// );
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -44,7 +44,7 @@ app.use("/contact", (req, res) => {
   var maillist = [
     "g.sathish@athulyaliving.com",
     "muthukumar@athulyaliving.com",
-    "bahison@athulyaliving.com"
+    "bahison@athulyaliving.com",
   ];
 
   const mail = {
