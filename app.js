@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const router = express.Router();
 const cors = require("cors");
+
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
@@ -20,10 +21,28 @@ app.set("view engine", "jade");
 
 // app.use(
 //   cors({
-//     origin: "https://www.athulyahomecare.com/lp/doctor-on-call/enquiryform",
+//     origin: "http://localhost:5000/contact",
 //     credentials: true,
 //   })
 // );
+
+// const validationMiddleware = (req, res, next) => {
+//   const schema = Joi.object()
+//     .keys({
+//       name: Joi.string().required(),
+//       email: Joi.string().required(),
+//       number: Joi.string().required(),
+//       textarea: Joi.number().required(),
+//     })
+//     .unknown(false);
+//   const { error } = schema.validate(req.body, { abortEarly: false });
+//   if (error) {
+//     res.status(200).json({ error: error });
+//   } else {
+//     next();
+//   }
+// };
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -34,8 +53,9 @@ app.use(express.json());
 
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
+
 app.use("/", router);
-app.use("/contact", (req, res) => {
+app.use("/contact", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const textarea = req.body.textarea;
@@ -53,6 +73,322 @@ app.use("/contact", (req, res) => {
     subject: "Chennai Submission",
     html: ` 
    <p> Hello Athulyaliving team,</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+
+app.use("/contactrehabphysiobangalore", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "response@athulyahomecare.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "  Rehab & Physio care  Bangalore Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Rehab & Physio care  Bangalore:,</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+app.use("/contactdementiacarechennai", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "enquiry@athulyaliving.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Dementia care Chennai Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Dementia care Chennai:</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+app.use("/contactdementiacarebangalore", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "enquiry@athulyaliving.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Dementia care Bangalore Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Dementia care Bangalore:</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+
+app.use("/contactdementiacarehyderabad", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "enquiry@athulyaliving.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Dementia care Hyderabad Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Dementia care Hyderabad:</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+
+app.use("/contactdementiacarecochin", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "enquiry@athulyaliving.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Dementia care Cochin Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Dementia care Cochin:</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+app.use("/contactdementiacarecoimbatore", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "enquiry@athulyaliving.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Dementia care Coimbatore  Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Dementia care Coimbatore :</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+
+app.use("/contactdoctoroncallbangalore", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "response@athulyahomecare.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Doctor-on-call Bangalore Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Doctor-on-call Bangalore:</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+
+app.use("/contactdoctoroncallhydrabad", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "response@athulyahomecare.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Doctor-on-call Hydrabad Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Doctor-on-call Hydrabad:</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+
+app.use("/contactdoctoroncallcochin", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "response@athulyahomecare.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Doctor-on-call Cochin Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Doctor-on-call Cochin   :</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+app.use("/contactdoctoroncallcoimbatore", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "response@athulyahomecare.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Doctor-on-call Coimbatore Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Doctor-on-call Coimbatore  :</p>
     <p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Message: ${textarea}</p>
@@ -88,8 +424,8 @@ const contactEmail = nodemailer.createTransport({
   port: 465,
   secure: true, // true for 465, false for other ports
   auth: {
-    user: "muthukumar@athulyaliving.com", // generated ethereal user
-    pass: "seniorcare@123", // generated ethereal password
+    user: "noreply@athulyaseniorcare.com", // generated ethereal user
+    pass: "Athulya@123", // generated ethereal password
   },
 });
 
@@ -102,5 +438,7 @@ contactEmail.verify((error) => {
 });
 
 console.log("Server Running");
+
+console.log(process.env.Port);
 
 module.exports = app;
