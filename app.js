@@ -1,10 +1,12 @@
 var createError = require("http-errors");
+var https = require("https");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const router = express.Router();
 const cors = require("cors");
+const request = require("request");
 
 const nodemailer = require("nodemailer");
 require("dotenv").config();
@@ -19,12 +21,12 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
-// app.use(
-//   cors({
-//     origin: "http://localhost:5000/contact",
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: "http://162.241.222.86:5000",
+    credentials: true,
+  })
+);
 
 // const validationMiddleware = (req, res, next) => {
 //   const schema = Joi.object()
@@ -103,8 +105,7 @@ app.use("/contactrehabphysiobangalore", async (req, res) => {
     from: `${name}`,
     to: maillist,
     subject: "  Rehab & Physio care  Bangalore Submission",
-    html: ` 
-   <p> You have got a new message from the contact form on your website - Rehab & Physio care  Bangalore:,</p>
+    html: `<p> You have got a new message from the contact form on your website - Rehab & Physio care  Bangalore:,</p>
     <p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Message: ${textarea}</p>
@@ -357,7 +358,7 @@ app.use("/contactdoctoroncallcochin", async (req, res) => {
     to: maillist,
     subject: "Doctor-on-call Cochin Submission",
     html: ` 
-   <p> You have got a new message from the contact form on your website - Doctor-on-call Cochin   :</p>
+   <p> You have got a new message from the contact form on your website - Doctor-on-call Cochin :</p>
     <p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Message: ${textarea}</p>
@@ -436,6 +437,15 @@ contactEmail.verify((error) => {
     console.log("Ready to Send");
   }
 });
+
+request.get(
+  "https://162.241.222.86:5000/contact",
+  function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      console.log(body);
+    }
+  }
+);
 
 console.log("Server Running");
 
