@@ -157,7 +157,7 @@ app.use("/contactdementiacarebangalore", async (req, res) => {
   const number = req.body.number;
 
   var maillist = [
-    "enquiry@athulyaliving.com",
+    "enquiryblr@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
   ];
