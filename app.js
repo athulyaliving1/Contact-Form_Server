@@ -21,12 +21,12 @@ var app = express();
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "jade");
 
-app.use(
-  cors({
-    origin: "http://162.241.222.86:5000",
-    credentials: true,
-  })
-);
+// app.use(
+//   cors({
+//     origin: "http://162.241.222.86:5000",
+//     credentials: true,
+//   })
+// );
 
 // const validationMiddleware = (req, res, next) => {
 //   const schema = Joi.object()
