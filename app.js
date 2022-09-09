@@ -372,6 +372,7 @@ app.use("/contactdoctoroncallcochin", async (req, res) => {
     }
   });
 });
+
 app.use("/contactdoctoroncallcoimbatore", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
@@ -390,6 +391,69 @@ app.use("/contactdoctoroncallcoimbatore", async (req, res) => {
     subject: "Doctor-on-call Coimbatore Submission",
     html: ` 
    <p> You have got a new message from the contact form on your website - Doctor-on-call Coimbatore  :</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+
+app.use("/contactmedicaleqbangalore", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "enquiryblr@athulyaliving.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Medical Equipment Bangalore Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Medical Equipment Bangalore Submission" :</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+app.use("/contactmedicaleqchennai", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "response@athulyahomecare.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Medical Equipment Chennai Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Medical Equipment Chennai Submission" :</p>
     <p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Message: ${textarea}</p>
