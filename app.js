@@ -62,11 +62,11 @@ app.use("/contact", async (req, res) => {
   const email = req.body.email;
   const textarea = req.body.textarea;
   const number = req.body.number;
+  const devices = req.body.devices;
 
   var maillist = [
     "g.sathish@athulyaliving.com",
     "muthukumar@athulyaliving.com",
-    "bahison@athulyaliving.com",
   ];
 
   const mail = {
@@ -78,7 +78,8 @@ app.use("/contact", async (req, res) => {
     <p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Message: ${textarea}</p>
-           <p>number: ${number}</p>`,
+           <p>number: ${number}</p>
+           <p>Equipment:${devices}`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
@@ -441,6 +442,7 @@ app.use("/contactmedicaleqchennai", async (req, res) => {
   const email = req.body.email;
   const textarea = req.body.textarea;
   const number = req.body.number;
+  const devices= req.body.devices;
 
   var maillist = [
     "response@athulyahomecare.com",
@@ -457,7 +459,8 @@ app.use("/contactmedicaleqchennai", async (req, res) => {
     <p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Message: ${textarea}</p>
-           <p>number: ${number}</p>`,
+           <p>number: ${number}</p>
+           <p>Equipment:${devices}`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
@@ -501,15 +504,6 @@ contactEmail.verify((error) => {
     console.log("Ready to Send");
   }
 });
-
-request.get(
-  "https://162.241.222.86:5000/contact",
-  function (error, response, body) {
-    if (!error && response.statusCode == 200) {
-      console.log(body);
-    }
-  }
-);
 
 console.log("Server Running");
 
