@@ -411,6 +411,7 @@ app.use("/contactmedicaleqbangalore", async (req, res) => {
   const email = req.body.email;
   const textarea = req.body.textarea;
   const number = req.body.number;
+  const devices = req.body.devices;
 
   var maillist = [
     "enquiryblr@athulyaliving.com",
@@ -427,7 +428,8 @@ app.use("/contactmedicaleqbangalore", async (req, res) => {
     <p>Name: ${name}</p>
            <p>Email: ${email}</p>
            <p>Message: ${textarea}</p>
-           <p>number: ${number}</p>`,
+           <p>number: ${number}</p>
+           <p>Equipment:${devices}`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
@@ -442,7 +444,7 @@ app.use("/contactmedicaleqchennai", async (req, res) => {
   const email = req.body.email;
   const textarea = req.body.textarea;
   const number = req.body.number;
-  const devices= req.body.devices;
+  const devices = req.body.devices;
 
   var maillist = [
     "response@athulyahomecare.com",
