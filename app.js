@@ -63,6 +63,7 @@ app.use("/contact", async (req, res) => {
   const textarea = req.body.textarea;
   const number = req.body.number;
   const devices = req.body.devices;
+  const checkbox = req.body.checkbox;
 
   var maillist = [
     "g.sathish@athulyaliving.com",
@@ -79,7 +80,8 @@ app.use("/contact", async (req, res) => {
            <p>Email: ${email}</p>
            <p>Message: ${textarea}</p>
            <p>number: ${number}</p>
-           <p>Equipment:${devices}`,
+           <p>devices:${devices}</p>
+           <p>type: ${checkbox}</p>`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
@@ -445,6 +447,7 @@ app.use("/contactmedicaleqchennai", async (req, res) => {
   const textarea = req.body.textarea;
   const number = req.body.number;
   const devices = req.body.devices;
+  const checkbox = req.body.checkbox;
 
   var maillist = [
     "response@athulyahomecare.com",
@@ -462,7 +465,8 @@ app.use("/contactmedicaleqchennai", async (req, res) => {
            <p>Email: ${email}</p>
            <p>Message: ${textarea}</p>
            <p>number: ${number}</p>
-           <p>Equipment:${devices}`,
+           <p>Equipment:${devices}
+           <p>type: ${checkbox}</p>`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
