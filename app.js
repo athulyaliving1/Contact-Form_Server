@@ -64,6 +64,7 @@ app.use("/contact", async (req, res) => {
   const number = req.body.number;
   const devices = req.body.devices;
   const checkbox = req.body.checkbox;
+  const location = req.body.location;
 
   var maillist = [
     "g.sathish@athulyaliving.com",
@@ -81,7 +82,8 @@ app.use("/contact", async (req, res) => {
            <p>Message: ${textarea}</p>
            <p>number: ${number}</p>
            <p>devices:${devices}</p>
-           <p>type: ${checkbox}</p>`,
+           <p>type: ${checkbox}</p>
+           <p>location:${location}</p>`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
