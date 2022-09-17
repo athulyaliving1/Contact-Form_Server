@@ -450,6 +450,7 @@ app.use("/contactmedicaleqchennai", async (req, res) => {
   const number = req.body.number;
   const devices = req.body.devices;
   const checkbox = req.body.checkbox;
+  const location = req.body.location;
 
   var maillist = [
     "response@athulyahomecare.com",
@@ -460,15 +461,16 @@ app.use("/contactmedicaleqchennai", async (req, res) => {
   const mail = {
     from: `${name}`,
     to: maillist,
-    subject: "Medical Equipment Chennai Submission",
+    subject: "Medical Equipment  Submission",
     html: ` 
-   <p> You have got a new message from the contact form on your website - Medical Equipment Chennai Submission" :</p>
+   <p> You have got a new message from the contact form on your website - Medical Equipment Submission" :</p>
     <p>Name: ${name}</p>
-           <p>Email: ${email}</p>
-           <p>Message: ${textarea}</p>
-           <p>number: ${number}</p>
-           <p>Equipment:${devices}
-           <p>type: ${checkbox}</p>`,
+    <p>Email: ${email}</p>
+    <p>Message: ${textarea}</p>
+    <p>number: ${number}</p>
+    <p>devices:${devices}</p>
+    <p>type: ${checkbox}</p>
+    <p>location:${location}</p>`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
