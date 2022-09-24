@@ -487,8 +487,6 @@ app.use("/contactophthalmologychennai", async (req, res) => {
   const textarea = req.body.textarea;
   const number = req.body.number;
 
-
-  
   var maillist = [
     "response@athulyahomecare.com",
     "muthukumar@athulyaliving.com",
