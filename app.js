@@ -481,6 +481,7 @@ app.use("/contactmedicaleqchennai", async (req, res) => {
     }
   });
 });
+
 app.use("/contactophthalmologychennai", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
@@ -499,6 +500,37 @@ app.use("/contactophthalmologychennai", async (req, res) => {
     subject: "ophthalmology Chennai Submission",
     html: ` 
    <p> You have got a new message from the contact form on your website - ophthalmology submission" :</p>
+    <p>Name: ${name}</p>
+    <p>Email: ${email}</p>
+    <p>Message: ${textarea}</p>
+    <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+app.use("/contactgynaecologychennai", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "response@athulyahomecare.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Gynaecology Chennai Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Gynaecology submission" :</p>
     <p>Name: ${name}</p>
     <p>Email: ${email}</p>
     <p>Message: ${textarea}</p>
