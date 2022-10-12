@@ -101,6 +101,7 @@ app.use("/contactrehabphysiobangalore", async (req, res) => {
   const number = req.body.number;
 
   var maillist = [
+    
     "response@athulyahomecare.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
@@ -131,6 +132,7 @@ app.use("/contactdementiacarechennai", async (req, res) => {
   const number = req.body.number;
 
   var maillist = [
+    "response@athulyahomecare.com",
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
@@ -162,6 +164,7 @@ app.use("/contactdementiacarebangalore", async (req, res) => {
   const number = req.body.number;
 
   var maillist = [
+    "response@athulyahomecare.com",
     "enquiryblr@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
@@ -194,6 +197,7 @@ app.use("/contactdementiacarehyderabad", async (req, res) => {
   const number = req.body.number;
 
   var maillist = [
+    "response@athulyahomecare.com",
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
@@ -226,6 +230,7 @@ app.use("/contactdementiacarecochin", async (req, res) => {
   const number = req.body.number;
 
   var maillist = [
+    "response@athulyahomecare.com",
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
@@ -257,6 +262,7 @@ app.use("/contactdementiacarecoimbatore", async (req, res) => {
   const number = req.body.number;
 
   var maillist = [
+    "response@athulyahomecare.com",
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
