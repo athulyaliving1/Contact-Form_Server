@@ -581,7 +581,7 @@ app.use("/contactgynaecologychennai", async (req, res) => {
     }
   });
 });
-app.use("/contactDiabetologistchennai", async (req, res) => {
+app.use("/contactDiabetologychennai", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const textarea = req.body.textarea;
@@ -596,9 +596,9 @@ app.use("/contactDiabetologistchennai", async (req, res) => {
   const mail = {
     from: `${name}`,
     to: maillist,
-    subject: "Diabetologist Chennai Submission",
+    subject: "Diabetology Chennai Submission",
     html: ` 
-   <p> "You have got a new message from the contact form on your website - Diabetologist submission" :</p>
+   <p> "You have got a new message from the contact form on your website - Diabetology submission" :</p>
     <p>Name: ${name}</p>
     <p>Email: ${email}</p>
     <p>Message: ${textarea}</p>
