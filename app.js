@@ -101,7 +101,6 @@ app.use("/contactrehabphysiobangalore", async (req, res) => {
   const number = req.body.number;
 
   var maillist = [
-    
     "response@athulyahomecare.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
@@ -288,7 +287,38 @@ app.use("/contactdementiacarecoimbatore", async (req, res) => {
   });
 });
 
-app.use("/contactdoctoroncallbangalore", async (req, res) => {
+app.use("/contactdoctoroncallchennai", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+  var maillist = [
+    "response@athulyahomecare.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Doctor-on-call Chennai Submission",
+    html: ` 
+   <p> You have got a new message from the contact form on your website - Doctor-on-call Chennai</p>
+    <p>Name: ${name}</p>
+           <p>Email: ${email}</p>
+           <p>Message: ${textarea}</p>
+           <p>number: ${number}</p>`,
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+app.use("/contactdoctoroncallchennai", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const textarea = req.body.textarea;
@@ -520,7 +550,6 @@ app.use("/contactophthalmologychennai", async (req, res) => {
   });
 });
 
-
 app.use("/contactgynaecologychennai", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
@@ -583,11 +612,6 @@ app.use("/contactDiabetologistchennai", async (req, res) => {
     }
   });
 });
-
-
-
-
-
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
