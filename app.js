@@ -604,8 +604,8 @@ app.use("/contactDiabetologychennai", async (req, res) => {
     <p>Name: ${name}</p>
     <p>Email: ${email}</p>
     <p>Message: ${textarea}</p>
-    <p>number: ${number}</p>,
-    <p>type: ${checkbox}</p>,
+    <p>number: ${number}</p>
+    <p>type: ${checkbox}</p>
     <p>location:${location}</p>`
 
   };
