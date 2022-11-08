@@ -581,7 +581,9 @@ app.use("/contactgynaecologychennai", async (req, res) => {
     }
   });
 });
-app.use("/contactDiabetologychennai", async (req, res) => {
+
+
+app.use("/contactbookDiabetologychennai", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const textarea = req.body.textarea;
@@ -607,6 +609,39 @@ app.use("/contactDiabetologychennai", async (req, res) => {
     <p>number: ${number}</p>
     <p>type: ${checkbox}</p>
     <p>location:${location}</p>`
+
+  };
+  contactEmail.sendMail(mail, (error) => {
+    if (error) {
+      res.json({ status: "ERROR" });
+    } else {
+      res.json({ status: "Message Sent" });
+    }
+  });
+});
+app.use("/contactDiabetologychennai", async (req, res) => {
+  const name = req.body.name;
+  const email = req.body.email;
+  const textarea = req.body.textarea;
+  const number = req.body.number;
+
+
+  var maillist = [
+    "response@athulyahomecare.com",
+    "muthukumar@athulyaliving.com",
+    "bahison@athulyaliving.com",
+  ];
+
+  const mail = {
+    from: `${name}`,
+    to: maillist,
+    subject: "Diabetology Chennai Submission",
+    html: ` 
+   <p> "You have got a new message from the contact form on your website - Diabetology submission" :</p>
+    <p>Name: ${name}</p>
+    <p>Email: ${email}</p>
+    <p>Message: ${textarea}</p>
+    <p>number: ${number}</p>`
 
   };
   contactEmail.sendMail(mail, (error) => {
