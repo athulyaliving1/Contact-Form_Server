@@ -585,7 +585,9 @@ app.use("/contactDiabetologychennai", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const textarea = req.body.textarea;
+  const checkbox = req.body.checkbox;
   const number = req.body.number;
+  const location = req.body.location;
 
   var maillist = [
     "response@athulyahomecare.com",
@@ -602,7 +604,10 @@ app.use("/contactDiabetologychennai", async (req, res) => {
     <p>Name: ${name}</p>
     <p>Email: ${email}</p>
     <p>Message: ${textarea}</p>
-    <p>number: ${number}</p>`,
+    <p>number: ${number}</p>,
+    <p>type: ${checkbox}</p>,
+    <p>location:${location}</p>`
+
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
