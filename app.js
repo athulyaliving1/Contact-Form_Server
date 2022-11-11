@@ -45,6 +45,12 @@ app.set("view engine", "jade");
 //   }
 // };
 
+app.get("/login", function (req, res) {
+  console.log("receiving data ...");
+  console.log("body is ", req.body);
+  res.send("Employee : Harish");
+});
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -582,7 +588,6 @@ app.use("/contactgynaecologychennai", async (req, res) => {
   });
 });
 
-
 app.use("/contactbookDiabetologychennai", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
@@ -608,8 +613,7 @@ app.use("/contactbookDiabetologychennai", async (req, res) => {
     <p>Message: ${textarea}</p>
     <p>number: ${number}</p>
     <p>type: ${checkbox}</p>
-    <p>location:${location}</p>`
-
+    <p>location:${location}</p>`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
@@ -624,7 +628,6 @@ app.use("/contactDiabetologychennai", async (req, res) => {
   const email = req.body.email;
   const textarea = req.body.textarea;
   const number = req.body.number;
-
 
   var maillist = [
     "response@athulyahomecare.com",
@@ -641,8 +644,7 @@ app.use("/contactDiabetologychennai", async (req, res) => {
     <p>Name: ${name}</p>
     <p>Email: ${email}</p>
     <p>Message: ${textarea}</p>
-    <p>number: ${number}</p>`
-
+    <p>number: ${number}</p>`,
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
@@ -686,17 +688,6 @@ contactEmail.verify((error) => {
     console.log("Ready to Send");
   }
 });
-
-
-
-app.get('/login', function(req, res) {
-  console.log('receiving data ...');
-  console.log('body is ',req.body);
-  res.send("Employee : Harish");
-});
-
-
-
 
 console.log("Server Running");
 
