@@ -687,6 +687,17 @@ contactEmail.verify((error) => {
   }
 });
 
+
+
+app.get('/login', function(req, res) {
+  console.log('receiving data ...');
+  console.log('body is ',req.body);
+  res.send("Employee : Harish");
+});
+
+
+
+
 console.log("Server Running");
 
 console.log(process.env.Port);
