@@ -324,14 +324,14 @@ app.use("/contactdoctoroncallchennai", async (req, res) => {
     }
   });
 });
-app.use("/contactdoctoroncallchennai", async (req, res) => {
+app.use("/contactdoctoroncallbangalore", async (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
   const textarea = req.body.textarea;
   const number = req.body.number;
 
   var maillist = [
-    "response@athulyahomecare.com",
+    "enquiryblr@athulyahomecare.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
   ];
