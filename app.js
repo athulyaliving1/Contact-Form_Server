@@ -141,6 +141,7 @@ app.use("/contactdementiacarechennai", async (req, res) => {
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
+     "dharmendra@athulyaliving.com"
   ];
 
   const mail = {
@@ -173,6 +174,7 @@ app.use("/contactdementiacarebangalore", async (req, res) => {
     "enquiryblr@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
+    "dharmendra@athulyaliving.com"
   ];
 
   const mail = {
@@ -206,6 +208,7 @@ app.use("/contactdementiacarehyderabad", async (req, res) => {
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
+    "dharmendra@athulyaliving.com"
   ];
 
   const mail = {
@@ -239,6 +242,7 @@ app.use("/contactdementiacarecochin", async (req, res) => {
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
+     "dharmendra@athulyaliving.com"
   ];
 
   const mail = {
@@ -271,6 +275,7 @@ app.use("/contactdementiacarecoimbatore", async (req, res) => {
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
+     "dharmendra@athulyaliving.com"
   ];
 
   const mail = {
