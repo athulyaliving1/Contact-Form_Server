@@ -507,7 +507,7 @@ app.use("/contactmedicaleqchennai", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Medical Equipment  Submission",
     html: ` 
