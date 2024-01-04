@@ -78,7 +78,7 @@ app.use("/contact", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Chennai Submission",
     html: ` 
@@ -113,7 +113,7 @@ app.use("/contactrehabphysiobangalore", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "  Rehab & Physio care  Bangalore Submission",
     html: `<p> You have got a new message from the contact form on your website - Rehab & Physio care  Bangalore:,</p>
@@ -141,11 +141,11 @@ app.use("/contactdementiacarechennai", async (req, res) => {
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
-     "dharmendra@athulyaliving.com"
+    "dharmendra@athulyaliving.com"
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Dementia care Chennai Submission",
     html: ` 
@@ -178,7 +178,7 @@ app.use("/contactdementiacarebangalore", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Dementia care Bangalore Submission",
     html: ` 
@@ -212,7 +212,7 @@ app.use("/contactdementiacarehyderabad", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Dementia care Hyderabad Submission",
     html: ` 
@@ -242,11 +242,11 @@ app.use("/contactdementiacarecochin", async (req, res) => {
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
-     "dharmendra@athulyaliving.com"
+    "dharmendra@athulyaliving.com"
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Dementia care Cochin Submission",
     html: ` 
@@ -275,11 +275,11 @@ app.use("/contactdementiacarecoimbatore", async (req, res) => {
     "enquiry@athulyaliving.com",
     "muthukumar@athulyaliving.com",
     "bahison@athulyaliving.com",
-     "dharmendra@athulyaliving.com"
+    "dharmendra@athulyaliving.com"
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Dementia care Coimbatore  Submission",
     html: ` 
@@ -311,7 +311,7 @@ app.use("/contactdoctoroncallchennai", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Doctor-on-call Chennai Submission",
     html: ` 
@@ -342,7 +342,7 @@ app.use("/contactdoctoroncallbangalore", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Doctor-on-call Bangalore Submission",
     html: ` 
@@ -374,7 +374,7 @@ app.use("/contactdoctoroncallhydrabad", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Doctor-on-call Hydrabad Submission",
     html: ` 
@@ -406,7 +406,7 @@ app.use("/contactdoctoroncallcochin", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Doctor-on-call Cochin Submission",
     html: ` 
@@ -438,7 +438,7 @@ app.use("/contactdoctoroncallcoimbatore", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Doctor-on-call Coimbatore Submission",
     html: ` 
@@ -471,7 +471,7 @@ app.use("/contactmedicaleqbangalore", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Medical Equipment Bangalore Submission",
     html: ` 
@@ -542,7 +542,7 @@ app.use("/contactophthalmologychennai", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "ophthalmology Chennai Submission",
     html: ` 
@@ -574,7 +574,7 @@ app.use("/contactgynaecologychennai", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Gynaecology Chennai Submission",
     html: ` 
@@ -608,7 +608,7 @@ app.use("/contactbookDiabetologychennai", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Diabetology Chennai Submission",
     html: ` 
@@ -641,7 +641,7 @@ app.use("/contactDiabetologychennai", async (req, res) => {
   ];
 
   const mail = {
-    from: `${name}`,
+    from: "noreply@athulyaseniorcare.com",
     to: maillist,
     subject: "Diabetology Chennai Submission",
     html: ` 
