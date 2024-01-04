@@ -1,17 +1,17 @@
 var createError = require("http-errors");
-
+var https = require("https");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
-const router = express.Router()
+const router = express.Router();
 const cors = require("cors");
-
+const request = require("request");
 
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 
-// var contactRouter = require("./routes/contact")
+// var contactRouter = require("./routes/contact");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
